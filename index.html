@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>彭祖养肾功 - 古法秘传自测</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif; overflow: hidden; background: #0a1f0a; }
+        .page-container { width: 100vw; height: 100vh; position: relative; background: linear-gradient(180deg, #0d2b1d 0%, #1a3d2e 20%, #0f2918 50%, #1a0f0a 100%); overflow: hidden; }
+        .mountain-bg { position: absolute; bottom: 35%; left: 0; width: 100%; height: 40%; background: radial-gradient(ellipse 80% 50% at 30% 100%, rgba(45, 80, 45, 0.6) 0%, transparent 70%), radial-gradient(ellipse 60% 40% at 70% 100%, rgba(35, 65, 35, 0.5) 0%, transparent 60%); filter: blur(1px); }
+        .mountain-bg::before { content: ''; position: absolute; bottom: 0; left: -10%; width: 60%; height: 80%; background: linear-gradient(135deg, transparent 40%, rgba(60, 100, 60, 0.3) 100%); border-radius: 0 100% 0 0; transform: skewX(-10deg); }
+        .mountain-bg::after { content: ''; position: absolute; bottom: 0; right: -10%; width: 70%; height: 60%; background: linear-gradient(-135deg, transparent 40%, rgba(50, 85, 50, 0.25) 100%); border-radius: 100% 0 0 0; transform: skewX(10deg); }
+        .pine-trees { position: absolute; bottom: 30%; width: 100%; height: 25%; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 5 L45 25 L35 25 L48 40 L40 40 L52 55 L45 55 L55 70 L45 70 L50 95 L55 70 L45 70 L55 55 L48 55 L60 40 L52 40 L65 25 L55 25 Z' fill='%230d1f0d' opacity='0.8'/%3E%3C/svg%3E"), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 10 L46 28 L38 28 L49 42 L42 42 L53 56 L46 56 L56 70 L47 70 L52 90 L57 70 L47 70 L57 56 L50 56 L61 42 L54 42 L65 28 L57 28 Z' fill='%23081a08' opacity='0.6'/%3E%3C/svg%3E"); background-size: 80px 120px, 60px 90px; background-position: 10% bottom, 85% bottom; background-repeat: no-repeat; }
+        .energy-particles { position: absolute; top: 0; left: 0; width: 100%; height: 60%; pointer-events: none; }
+        .particle { position: absolute; width: 4px; height: 4px; background: radial-gradient(circle, #ffd700 0%, #ffaa00 50%, transparent 100%); border-radius: 50%; animation: float 3s ease-in-out infinite; box-shadow: 0 0 10px #ffd700, 0 0 20px #ff8c00; }
+        @keyframes float { 0%, 100% { transform: translateY(0) scale(1); opacity: 0.8; } 50% { transform: translateY(-20px) scale(1.2); opacity: 1; } }
+        .blue-aura { position: absolute; top: 15%; left: 50%; transform: translateX(-50%); width: 200px; height: 200px; background: radial-gradient(ellipse, rgba(0, 150, 255, 0.4) 0%, rgba(0, 100, 200, 0.2) 40%, transparent 70%); border-radius: 50%; animation: pulse 2s ease-in-out infinite; }
+        @keyframes pulse { 0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.6; } 50% { transform: translateX(-50%) scale(1.1); opacity: 0.9; } }
+        .screen { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: none; flex-direction: column; align-items: center; padding: 20px; }
+        .screen.active { display: flex; }
+        .home-screen .header-area { margin-top: 8%; text-align: center; z-index: 10; }
+        .home-screen .main-title { font-size: 42px; font-weight: 900; color: #ffd700; text-shadow: 0 0 10px rgba(255, 215, 0, 0.8), 0 0 30px rgba(255, 140, 0, 0.6), 3px 3px 6px rgba(0, 0, 0, 0.8); letter-spacing: 6px; margin-bottom: 8px; }
+        .home-screen .sub-title { font-size: 14px; color: #c9b896; letter-spacing: 4px; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); }
+        .home-screen .ancient-seal { margin-top: 15px; padding: 8px 20px; border: 2px solid #dc2626; color: #dc2626; font-size: 12px; letter-spacing: 3px; transform: rotate(-3deg); opacity: 0.9; }
+        .home-screen .character-area { margin-top: 5%; width: 200px; height: 240px; background: radial-gradient(ellipse at center bottom, rgba(255, 215, 0, 0.15) 0%, rgba(255, 140, 0, 0.08) 50%, transparent 70%); border-radius: 50% 50% 40% 40%; display: flex; align-items: center; justify-content: center; }
+        .home-screen .character-silhouette { width: 140px; height: 200px; background: linear-gradient(180deg, #1a0f05 0%, #2d1f0f 30%, #1a1208 100%); border-radius: 40% 40% 45% 45%; box-shadow: 0 0 60px rgba(255, 215, 0, 0.3), 0 0 100px rgba(255, 140, 0, 0.2); display: flex; align-items: center; justify-content: center; font-size: 80px; opacity: 0.8; }
+        .home-screen .intro-text { margin-top: 8%; text-align: center; color: #c9b896; font-size: 14px; line-height: 2; letter-spacing: 2px; padding: 0 30px; }
+        .home-screen .intro-text .highlight { color: #ffd700; font-weight: 600; }
+        .quiz-screen { justify-content: flex-start; padding-top: 12%; }
+        .quiz-progress { width: 80%; max-width: 300px; height: 4px; background: rgba(255,255,255,0.1); border-radius: 2px; margin-bottom: 30px; overflow: hidden; }
+        .quiz-progress-bar { height: 100%; background: linear-gradient(90deg, #ffd700, #ff8c00); border-radius: 2px; transition: width 0.5s ease; box-shadow: 0 0 10px rgba(255, 215, 0, 0.5); }
+        .quiz-number { color: #dc2626; font-size: 14px; letter-spacing: 3px; margin-bottom: 15px; font-weight: 600; }
+        .quiz-question { color: #fff; font-size: 22px; font-weight: 700; text-align: center; line-height: 1.6; margin-bottom: 10px; padding: 0 20px; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); }
+        .quiz-subtitle { color: #888; font-size: 13px; margin-bottom: 40px; letter-spacing: 1px; }
+        .quiz-options { width: 90%; max-width: 340px; display: flex; flex-direction: column; gap: 15px; }
+        .quiz-option { padding: 18px 25px; background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 100%); border: 1px solid rgba(255,215,0,0.2); border-radius: 12px; color: #fff; font-size: 16px; cursor: pointer; transition: all 0.3s ease; text-align: left; position: relative; overflow: hidden; }
+        .quiz-option::before { content: ''; position: absolute; left: 0; top: 0; width: 4px; height: 100%; background: linear-gradient(180deg, #ffd700, #ff8c00); opacity: 0; transition: opacity 0.3s ease; }
+        .quiz-option:hover, .quiz-option:active { background: linear-gradient(135deg, rgba(255,215,0,0.15) 0%, rgba(255,140,0,0.08) 100%); border-color: rgba(255,215,0,0.5); transform: translateX(5px); }
+        .quiz-option:hover::before, .quiz-option:active::before { opacity: 1; }
+        .option-tag { display: inline-block; width: 24px; height: 24px; background: rgba(255,215,0,0.2); border-radius: 50%; text-align: center; line-height: 24px; font-size: 12px; margin-right: 12px; color: #ffd700; }
+        .result-screen { justify-content: flex-start; padding-top: 8%; overflow-y: auto; }
+        .result-badge { width: 120px; height: 120px; background: radial-gradient(circle, rgba(220,38,38,0.3) 0%, transparent 70%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; animation: badge-pulse 2s ease-in-out infinite; }
+        @keyframes badge-pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+        .result-badge-inner { width: 80px; height: 80px; background: linear-gradient(135deg, #dc2626, #991b1b); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 36px; box-shadow: 0 0 30px rgba(220,38,38,0.6); }
+        .result-title { color: #ffd700; font-size: 28px; font-weight: 800; text-align: center; margin-bottom: 8px; text-shadow: 0 0 20px rgba(255,215,0,0.5); }
+        .result-subtitle { color: #c9b896; font-size: 14px; letter-spacing: 2px; margin-bottom: 25px; }
+        .result-score { display: flex; align-items: center; gap: 15px; margin-bottom: 25px; padding: 15px 30px; background: rgba(0,0,0,0.3); border-radius: 30px; border: 1px solid rgba(255,215,0,0.2); }
+        .score-label { color: #888; font-size: 13px; }
+        .score-bar { width: 150px; height: 8px; background: rgba(255,255,255,0.1); border-radius: 4px; overflow: hidden; }
+        .score-fill { height: 100%; background: linear-gradient(90deg, #dc2626, #ffd700); border-radius: 4px; transition: width 1s ease; }
+        .score-value { color: #ffd700; font-size: 20px; font-weight: 700; }
+        .result-analysis { width: 90%; max-width: 340px; background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%); border: 1px solid rgba(255,215,0,0.15); border-radius: 16px; padding: 20px; margin-bottom: 20px; }
+        .analysis-title { color: #ffd700; font-size: 16px; font-weight: 600; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+        .analysis-content { color: #ccc; font-size: 14px; line-height: 1.8; }
+        .urgent-notice { width: 90%; max-width: 340px; background: linear-gradient(135deg, rgba(220,38,38,0.2) 0%, rgba(153,27,27,0.1) 100%); border: 1px solid rgba(220,38,38,0.4); border-radius: 12px; padding: 15px 20px; margin-bottom: 20px; text-align: center; }
+        .urgent-notice .notice-title { color: #ff6b6b; font-size: 15px; font-weight: 600; margin-bottom: 8px; }
+        .urgent-notice .notice-text { color: #ddd; font-size: 13px; line-height: 1.6; }
+        .course-highlight { width: 90%; max-width: 340px; background: linear-gradient(135deg, rgba(255,215,0,0.1) 0%, rgba(255,140,0,0.05) 100%); border: 1px solid rgba(255,215,0,0.3); border-radius: 12px; padding: 18px; margin-bottom: 25px; }
+        .course-highlight .course-title { color: #ffd700; font-size: 16px; font-weight: 700; margin-bottom: 12px; text-align: center; }
+        .course-benefits { display: flex; flex-direction: column; gap: 10px; }
+        .benefit-item { display: flex; align-items: center; gap: 10px; color: #fff; font-size: 14px; }
+        .benefit-icon { color: #ffd700; font-size: 16px; }
+        .cta-button { width: 90%; max-width: 340px; height: 70px; background: linear-gradient(180deg, #dc2626 0%, #b91c1c 50%, #991b1b 100%); border: none; border-radius: 35px; color: #fff; font-size: 22px; font-weight: 800; letter-spacing: 4px; cursor: pointer; position: relative; overflow: hidden; box-shadow: 0 0 30px rgba(220, 38, 38, 0.6), 0 0 60px rgba(220, 38, 38, 0.3), 0 8px 20px rgba(0, 0, 0, 0.4), inset 0 2px 0 rgba(255, 255, 255, 0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.2); text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); transition: all 0.3s ease; margin-bottom: 15px; z-index: 100; -webkit-tap-highlight-color: transparent; }
+        .cta-button::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.3) 50%, transparent 100%); animation: shimmer 2s infinite; }
+        @keyframes shimmer { 0% { left: -100%; } 100% { left: 100%; } }
+        .cta-button:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(220, 38, 38, 0.8), 0 0 80px rgba(220, 38, 38, 0.4), 0 10px 30px rgba(0, 0, 0, 0.5); }
+        .cta-button.free-tag::after { content: '限时免费'; position: absolute; top: -8px; right: 15px; background: #ffd700; color: #000; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 10px; letter-spacing: 1px; box-shadow: 0 2px 10px rgba(255,215,0,0.5); }
+        .button-glow { position: absolute; bottom: 5%; left: 50%; transform: translateX(-50%); width: 95%; max-width: 360px; height: 85px; background: radial-gradient(ellipse, rgba(220, 38, 38, 0.3) 0%, transparent 70%); border-radius: 45px; animation: glow-pulse 1.5s ease-in-out infinite; pointer-events: none; }
+        @keyframes glow-pulse { 0%, 100% { opacity: 0.5; transform: translateX(-50%) scale(1); } 50% { opacity: 0.8; transform: translateX(-50%) scale(1.05); } }
+        .privacy-note { color: #666; font-size: 11px; margin-top: 10px; margin-bottom: 30px; }
+        .cloud-pattern { position: absolute; width: 100%; height: 100%; pointer-events: none; opacity: 0.08; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 50'%3E%3Cpath d='M10 35 Q20 20 35 30 T60 25 T90 30' stroke='%23ffd700' fill='none' stroke-width='1'/%3E%3C/svg%3E"); background-size: 200px 100px; }
+        @media (max-height: 700px) { .home-screen .main-title { font-size: 32px; } .quiz-question { font-size: 18px; } .result-title { font-size: 24px; } }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <div class="cloud-pattern"></div>
+        <div class="mountain-bg"></div>
+        <div class="pine-trees"></div>
+        <div class="energy-particles">
+            <div class="particle" style="left: 20%; top: 30%; animation-delay: 0s;"></div>
+            <div class="particle" style="left: 35%; top: 20%; animation-delay: 0.5s;"></div>
+            <div class="particle" style="left: 50%; top: 25%; animation-delay: 1s;"></div>
+            <div class="particle" style="left: 65%; top: 15%; animation-delay: 1.5s;"></div>
+            <div class="particle" style="left: 80%; top: 35%; animation-delay: 2s;"></div>
+            <div class="particle" style="left: 25%; top: 45%; animation-delay: 0.3s;"></div>
+            <div class="particle" style="left: 70%; top: 40%; animation-delay: 0.8s;"></div>
+            <div class="particle" style="left: 45%; top: 10%; animation-delay: 1.2s;"></div>
+        </div>
+        <div class="blue-aura"></div>
+        
+        <div class="screen home-screen active" id="homeScreen">
+            <div class="header-area">
+                <h1 class="main-title">彭祖养肾功</h1>
+                <p class="sub-title">上古秘传 · 千年养生</p>
+                <div class="ancient-seal">古法真传</div>
+            </div>
+            <div class="character-area">
+                <div class="character-silhouette">⚡</div>
+            </div>
+            <div class="intro-text">
+                <p>传说彭祖寿高八百，<br>其<span class="highlight">养肾秘术</span>代代相传。</p>
+                <p style="margin-top: 15px;">3分钟自测，<br>看清你的<span class="highlight">真实肾气水平</span></p>
+            </div>
+            <button class="cta-button" onclick="startQuiz()" style="margin-top: auto; margin-bottom: 15%; z-index: 100; position: relative;">立即自测</button>
+            <div class="button-glow" style="bottom: 12%;"></div>
+        </div>
+        
+        <div class="screen quiz-screen" id="quizScreen">
+            <div class="quiz-progress">
+                <div class="quiz-progress-bar" id="progressBar" style="width: 0%"></div>
+            </div>
+            <div class="quiz-number" id="quizNumber">第 1/5 题</div>
+            <div class="quiz-question" id="quizQuestion">题目加载中...</div>
+            <div class="quiz-subtitle" id="quizSubtitle">请诚实选择，结果更准</div>
+            <div class="quiz-options" id="quizOptions"></div>
+        </div>
+        
+        <div class="screen result-screen" id="resultScreen">
+            <div class="result-badge">
+                <div class="result-badge-inner">📜</div>
+            </div>
+            <div class="result-title" id="resultTitle">肾气亏虚</div>
+            <div class="result-subtitle" id="resultSubtitle">你的身体正在发出警报</div>
+            <div class="result-score">
+                <span class="score-label">肾气指数</span>
+                <div class="score-bar">
+                    <div class="score-fill" id="scoreFill" style="width: 0%"></div>
+                </div>
+                <span class="score-value" id="scoreValue">0分</span>
+            </div>
+            <div class="result-analysis">
+                <div class="analysis-title">⚠️ 问题分析</div>
+                <div class="analysis-content" id="analysisContent">分析内容加载中...</div>
+            </div>
+            <div class="urgent-notice">
+                <div class="notice-title">⏰ 你的身体正在透支</div>
+                <div class="notice-text" id="urgentText">如果不及时调理，3-5年内可能出现严重健康问题</div>
+            </div>
+            <div class="course-highlight">
+                <div class="course-title">🎯 12天彭祖养肾功</div>
+                <div class="course-benefits">
+                    <div class="benefit-item"><span class="benefit-icon">✓</span><span>每天10分钟，无需药物</span></div>
+                    <div class="benefit-item"><span class="benefit-icon">✓</span><span>古法导引，即时见效</span></div>
+                    <div class="benefit-item"><span class="benefit-icon">✓</span><span>已有<span style="color:#ffd700;font-weight:700">12,847</span>人成功逆袭</span></div>
+                </div>
+            </div>
+            <button class="cta-button free-tag" onclick="goToCourse()" style="z-index: 100; position: relative;">观看免费视频课程</button>
+            <div class="button-glow"></div>
+            <p class="privacy-note">⚡ 限时免费，今日仅剩 <span style="color:#dc2626;font-weight:700">37</span> 个名额</p>
+        </div>
+    </div>
+    
+    <script>
+        const quizData = [
+            {
+                question: "晚上起夜几次？",
+                subtitle: "夜间频繁起夜是肾气不足的典型信号",
+                options: [
+                    { text: "不起夜，一觉到天亮", score: 20 },
+                    { text: "1-2次，偶尔起夜", score: 10 },
+                    { text: "3次以上，甚至更多", score: 0 }
+                ]
+            },
+            {
+                question: "第二天醒来感觉如何？",
+                subtitle: "晨起状态直接反映肾气恢复能力",
+                options: [
+                    { text: "精神饱满，充满活力", score: 20 },
+                    { text: "有点累，但能撑一天", score: 10 },
+                    { text: "疲惫不堪，像被掏空", score: 0 }
+                ]
+            },
+            {
+                question: "关键时刻，能撑多久？",
+                subtitle: "这是男人最不愿面对的问题",
+                options: [
+                    { text: "15分钟以上，收放自如", score: 20 },
+                    { text: "5-15分钟，还算正常", score: 10 },
+                    { text: "不到5分钟，甚至更快", score: 0 }
+                ]
+            },
+            {
+                question: "腰酸背痛的情况？",
+                subtitle: "腰为肾之府，腰痛即肾虚",
+                options: [
+                    { text: "很少腰酸，腰板硬朗", score: 20 },
+                    { text: "久坐后会酸，休息一下就好", score: 10 },
+                    { text: "经常酸痛，像断了一样", score: 0 }
+                ]
+            },
+            {
+                question: "头发和精力状态？",
+                subtitle: "肾其华在发，精力源于肾",
+                options: [
+                    { text: "头发浓密，精力旺盛", score: 20 },
+                    { text: "少量脱发，精力一般", score: 10 },
+                    { text: "明显脱发/白发，整天没劲", score: 0 }
+                ]
+            }
+        ];
+        
+        const resultData = {
+            excellent: {
+                title: "肾气充盈",
+                subtitle: "你的身体状态令人羡慕",
+                score: "81-100",
+                analysis: "你的肾气状态良好，说明平时作息规律、懂得保养。但也要注意，<span class='warning'>30岁后肾气自然衰退</span>，建议提前预防，学习彭祖养肾功，<span class='solution'>让好状态持续更久</span>。",
+                urgent: "保持优势，提前预防衰老"
+            },
+            normal: {
+                title: "肾气偏虚",
+                subtitle: "身体已经开始发出警告",
+                score: "41-80",
+                analysis: "你的肾气已经出现<span class='warning'>明显损耗</span>，这是长期熬夜、压力大、久坐不动的结果。如果不及时调理，<span class='warning'>3年内可能出现严重问题</span>。好消息是，通过彭祖养肾功，<span class='solution'>12天即可看到明显改善</span>。",
+                urgent: "再不调理，问题将不可逆转"
+            },
+            poor: {
+                title: "肾气严重亏虚",
+                subtitle: "你的身体正在崩溃边缘",
+                score: "0-40",
+                analysis: "你的肾气状态<span class='warning'>非常危险</span>！频繁起夜、精力差、力不从心都是严重信号。很多男性到了这个阶段才开始重视，但往往<span class='warning'>为时已晚</span>。彭祖养肾功是<span class='solution'>最后的自救机会</span>，12天古法导引，帮你重回巅峰。",
+                urgent: "这是最后的调理机会，错过难再恢复"
+            }
+        };
+        
+        let currentQuestion = 0;
+        let totalScore = 0;
+        
+        function startQuiz() {
+            document.getElementById('homeScreen').classList.remove('active');
+            document.getElementById('quizScreen').classList.add('active');
+            showQuestion();
+        }
+        
+        function showQuestion() {
+            const question = quizData[currentQuestion];
+            document.getElementById('quizNumber').textContent = `第 ${currentQuestion + 1}/5 题`;
+            document.getElementById('quizQuestion').textContent = question.question;
+            document.getElementById('quizSubtitle').textContent = question.subtitle;
+            document.getElementById('progressBar').style.width = `${(currentQuestion / quizData.length) * 100}%`;
+            
+            const optionsHtml = question.options.map((opt, idx) => `
+                <div class="quiz-option" onclick="selectOption(${opt.score})">
+                    <span class="option-tag">${String.fromCharCode(65 + idx)}</span>
+                    ${opt.text}
+                </div>
+            `).join('');
+            document.getElementById('quizOptions').innerHTML = optionsHtml;
+        }
+        
+        function selectOption(score) {
+            totalScore += score;
+            currentQuestion++;
+            
+            if (currentQuestion < quizData.length) {
+                showQuestion();
+            } else {
+                showResult();
+            }
+        }
+        
+        function showResult() {
+            document.getElementById('quizScreen').classList.remove('active');
+            document.getElementById('resultScreen').classList.add('active');
+            
+            let result;
+            if (totalScore >= 81) result = resultData.excellent;
+            else if (totalScore >= 41) result = resultData.normal;
+            else result = resultData.poor;
+            
+            document.getElementById('resultTitle').textContent = result.title;
+            document.getElementById('resultSubtitle').textContent = result.subtitle;
+            document.getElementById('scoreValue').textContent = `${totalScore}分`;
+            document.getElementById('analysisContent').innerHTML = result.analysis;
+            document.getElementById('urgentText').textContent = result.urgent;
+            
+            setTimeout(() => {
+                document.getElementById('scoreFill').style.width = `${totalScore}%`;
+            }, 300);
+        }
+        
+        function goToCourse() {
+            window.location.href = 'https://www.langtushijie.com/category/%E7%A1%AC%E6%8E%A7/%E8%82%BE%E8%80%85%E4%B8%BA%E7%8E%8B';
+        }
+    </script>
+</body>
+</html>
