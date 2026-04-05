@@ -61,6 +61,8 @@
         .course-benefits { display: flex; flex-direction: column; gap: 10px; }
         .benefit-item { display: flex; align-items: center; gap: 10px; color: #fff; font-size: 14px; }
         .benefit-icon { color: #ffd700; font-size: 16px; }
+        .get-course-btn { width: 100%; margin-top: 15px; padding: 12px 0; background: linear-gradient(90deg, #dc2626, #ff6b6b); border: none; border-radius: 25px; color: #fff; font-size: 16px; font-weight: 700; letter-spacing: 2px; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(220, 38, 38, 0.4); text-shadow: 1px 1px 2px rgba(0,0,0,0.3); -webkit-tap-highlight-color: transparent; user-select: none; touch-action: manipulation; }
+        .get-course-btn:hover, .get-course-btn:active { background: linear-gradient(90deg, #ff4444, #ff8888); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(220, 38, 38, 0.6); }
         .cta-button { width: 90%; max-width: 340px; height: 70px; background: linear-gradient(180deg, #dc2626 0%, #b91c1c 50%, #991b1b 100%); border: none; border-radius: 35px; color: #fff; font-size: 22px; font-weight: 800; letter-spacing: 4px; cursor: pointer; position: relative; overflow: hidden; box-shadow: 0 0 30px rgba(220, 38, 38, 0.6), 0 0 60px rgba(220, 38, 38, 0.3), 0 8px 20px rgba(0, 0, 0, 0.4), inset 0 2px 0 rgba(255, 255, 255, 0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.2); text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); transition: all 0.3s ease; margin-bottom: 15px; z-index: 100; -webkit-tap-highlight-color: transparent; user-select: none; touch-action: manipulation; }
         .cta-button::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.3) 50%, transparent 100%); animation: shimmer 2s infinite; }
         @keyframes shimmer { 0% { left: -100%; } 100% { left: 100%; } }
@@ -92,8 +94,8 @@
         
         <div class="screen home-screen active" id="homeScreen">
             <div class="header-area">
-                <h1 class="main-title">彭祖养肾功</h1>
-                <p class="sub-title">上古秘传 · 千年养生</p>
+                <h1 class="main-title">你的肾气还旺吗</h1>
+                <p class="sub-title">立即测试 · 古法秘传</p>
                 <div class="ancient-seal">古法真传</div>
             </div>
             <div class="character-area">
@@ -103,7 +105,7 @@
                 <p>传说彭祖寿高八百，<br>其<span class="highlight">养肾秘术</span>代代相传。</p>
                 <p style="margin-top: 15px;">3分钟自测，<br>看清你的<span class="highlight">真实肾气水平</span></p>
             </div>
-            <button class="cta-button" onclick="startQuiz()" style="margin-top: 20px; margin-bottom: 10%; z-index: 100; position: relative; flex-shrink: 0;">立即自测</button>
+            <button class="cta-button" onclick="startQuiz()" style="margin-top: 20px; margin-bottom: 10%; z-index: 100; position: relative; flex-shrink: 0;">立即测试</button>
             <div class="button-glow" style="bottom: 10%;"></div>
         </div>
         
@@ -145,6 +147,7 @@
                     <div class="benefit-item"><span class="benefit-icon">✓</span><span>古法导引，即时见效</span></div>
                     <div class="benefit-item"><span class="benefit-icon">✓</span><span>已有<span style="color:#ffd700;font-weight:700">12,847</span>人成功逆袭</span></div>
                 </div>
+                <button class="get-course-btn" onclick="goToCourse()">立刻获取 →</button>
             </div>
             <button class="cta-button free-tag" onclick="goToCourse()" style="z-index: 100; position: relative;">观看免费视频课程</button>
             <div class="button-glow"></div>
