@@ -23,9 +23,9 @@
         .home-screen .main-title { font-size: 42px; font-weight: 900; color: #ffd700; text-shadow: 0 0 10px rgba(255, 215, 0, 0.8), 0 0 30px rgba(255, 140, 0, 0.6), 3px 3px 6px rgba(0, 0, 0, 0.8); letter-spacing: 6px; margin-bottom: 8px; }
         .home-screen .sub-title { font-size: 14px; color: #c9b896; letter-spacing: 4px; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); }
         .home-screen .ancient-seal { margin-top: 15px; padding: 8px 20px; border: 2px solid #dc2626; color: #dc2626; font-size: 12px; letter-spacing: 3px; transform: rotate(-3deg); opacity: 0.9; }
-        .home-screen .character-area { margin-top: 5%; width: 200px; height: 240px; background: radial-gradient(ellipse at center bottom, rgba(255, 215, 0, 0.15) 0%, rgba(255, 140, 0, 0.08) 50%, transparent 70%); border-radius: 50% 50% 40% 40%; display: flex; align-items: center; justify-content: center; }
+        .home-screen .character-area { margin-top: 5%; width: 200px; height: 200px; background: radial-gradient(ellipse at center bottom, rgba(255, 215, 0, 0.15) 0%, rgba(255, 140, 0, 0.08) 50%, transparent 70%); border-radius: 50% 50% 40% 40%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
         .home-screen .character-silhouette { width: 140px; height: 200px; background: linear-gradient(180deg, #1a0f05 0%, #2d1f0f 30%, #1a1208 100%); border-radius: 40% 40% 45% 45%; box-shadow: 0 0 60px rgba(255, 215, 0, 0.3), 0 0 100px rgba(255, 140, 0, 0.2); display: flex; align-items: center; justify-content: center; font-size: 80px; opacity: 0.8; }
-        .home-screen .intro-text { margin-top: 8%; text-align: center; color: #c9b896; font-size: 14px; line-height: 2; letter-spacing: 2px; padding: 0 30px; }
+        .home-screen .intro-text { margin-top: 5%; text-align: center; color: #c9b896; font-size: 14px; line-height: 2; letter-spacing: 2px; padding: 0 30px; flex-shrink: 0; }
         .home-screen .intro-text .highlight { color: #ffd700; font-weight: 600; }
         .quiz-screen { justify-content: flex-start; padding-top: 12%; }
         .quiz-progress { width: 80%; max-width: 300px; height: 4px; background: rgba(255,255,255,0.1); border-radius: 2px; margin-bottom: 30px; overflow: hidden; }
@@ -34,7 +34,7 @@
         .quiz-question { color: #fff; font-size: 22px; font-weight: 700; text-align: center; line-height: 1.6; margin-bottom: 10px; padding: 0 20px; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); }
         .quiz-subtitle { color: #888; font-size: 13px; margin-bottom: 40px; letter-spacing: 1px; }
         .quiz-options { width: 90%; max-width: 340px; display: flex; flex-direction: column; gap: 15px; }
-        .quiz-option { padding: 18px 25px; background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 100%); border: 1px solid rgba(255,215,0,0.2); border-radius: 12px; color: #fff; font-size: 16px; cursor: pointer; transition: all 0.3s ease; text-align: left; position: relative; overflow: hidden; }
+        .quiz-option { padding: 18px 25px; background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 100%); border: 1px solid rgba(255,215,0,0.2); border-radius: 12px; color: #fff; font-size: 16px; cursor: pointer; transition: all 0.3s ease; text-align: left; position: relative; overflow: hidden; -webkit-tap-highlight-color: transparent; user-select: none; touch-action: manipulation; z-index: 10; }
         .quiz-option::before { content: ''; position: absolute; left: 0; top: 0; width: 4px; height: 100%; background: linear-gradient(180deg, #ffd700, #ff8c00); opacity: 0; transition: opacity 0.3s ease; }
         .quiz-option:hover, .quiz-option:active { background: linear-gradient(135deg, rgba(255,215,0,0.15) 0%, rgba(255,140,0,0.08) 100%); border-color: rgba(255,215,0,0.5); transform: translateX(5px); }
         .quiz-option:hover::before, .quiz-option:active::before { opacity: 1; }
@@ -61,7 +61,7 @@
         .course-benefits { display: flex; flex-direction: column; gap: 10px; }
         .benefit-item { display: flex; align-items: center; gap: 10px; color: #fff; font-size: 14px; }
         .benefit-icon { color: #ffd700; font-size: 16px; }
-        .cta-button { width: 90%; max-width: 340px; height: 70px; background: linear-gradient(180deg, #dc2626 0%, #b91c1c 50%, #991b1b 100%); border: none; border-radius: 35px; color: #fff; font-size: 22px; font-weight: 800; letter-spacing: 4px; cursor: pointer; position: relative; overflow: hidden; box-shadow: 0 0 30px rgba(220, 38, 38, 0.6), 0 0 60px rgba(220, 38, 38, 0.3), 0 8px 20px rgba(0, 0, 0, 0.4), inset 0 2px 0 rgba(255, 255, 255, 0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.2); text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); transition: all 0.3s ease; margin-bottom: 15px; z-index: 100; -webkit-tap-highlight-color: transparent; }
+        .cta-button { width: 90%; max-width: 340px; height: 70px; background: linear-gradient(180deg, #dc2626 0%, #b91c1c 50%, #991b1b 100%); border: none; border-radius: 35px; color: #fff; font-size: 22px; font-weight: 800; letter-spacing: 4px; cursor: pointer; position: relative; overflow: hidden; box-shadow: 0 0 30px rgba(220, 38, 38, 0.6), 0 0 60px rgba(220, 38, 38, 0.3), 0 8px 20px rgba(0, 0, 0, 0.4), inset 0 2px 0 rgba(255, 255, 255, 0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.2); text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); transition: all 0.3s ease; margin-bottom: 15px; z-index: 100; -webkit-tap-highlight-color: transparent; user-select: none; touch-action: manipulation; }
         .cta-button::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.3) 50%, transparent 100%); animation: shimmer 2s infinite; }
         @keyframes shimmer { 0% { left: -100%; } 100% { left: 100%; } }
         .cta-button:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(220, 38, 38, 0.8), 0 0 80px rgba(220, 38, 38, 0.4), 0 10px 30px rgba(0, 0, 0, 0.5); }
@@ -103,7 +103,7 @@
                 <p>传说彭祖寿高八百，<br>其<span class="highlight">养肾秘术</span>代代相传。</p>
                 <p style="margin-top: 15px;">3分钟自测，<br>看清你的<span class="highlight">真实肾气水平</span></p>
             </div>
-            <button class="cta-button" onclick="startQuiz()" style="margin-top: auto; margin-bottom: 15%; z-index: 100; position: relative;">立即自测</button>
+            <button class="cta-button" onclick="startQuiz()" style="margin-top: 20px; margin-bottom: 10%; z-index: 100; position: relative; flex-shrink: 0;">立即自测</button>
             <div class="button-glow" style="bottom: 12%;"></div>
         </div>
         
